@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace API.Entities
 {
-    public class Product
+    public class Products
     {
         public int Id { get; set; }
         public string Name { get; set; }
