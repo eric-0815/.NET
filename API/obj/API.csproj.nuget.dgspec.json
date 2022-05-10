@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Eric Hong\\Desktop\\MYSTUDY\\FullStack\\.NET\\ReStore\\API\\API.csproj": {}
+    "C:\\Users\\Eric Hong\\Desktop\\MYSTUDY\\FullStack\\.NET\\ReStore\\API\\API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Eric Hong\\Desktop\\MYSTUDY\\FullStack\\.NET\\ReStore\\API\\API.csproj": {
+    "C:\\Users\\Eric Hong\\Desktop\\MYSTUDY\\FullStack\\.NET\\ReStore\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Eric Hong\\Desktop\\MYSTUDY\\FullStack\\.NET\\ReStore\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Eric Hong\\Desktop\\MYSTUDY\\FullStack\\.NET\\ReStore\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "c:\\Users\\Eric Hong\\Desktop\\MYSTUDY\\FullStack\\.NET\\ReStore\\API\\API.csproj",
+        "projectPath": "C:\\Users\\Eric Hong\\Desktop\\MYSTUDY\\FullStack\\.NET\\ReStore\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Eric Hong\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Eric Hong\\Desktop\\MYSTUDY\\FullStack\\.NET\\ReStore\\API\\obj\\",
+        "outputPath": "C:\\Users\\Eric Hong\\Desktop\\MYSTUDY\\FullStack\\.NET\\ReStore\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eric Hong\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -39,6 +39,8 @@
           "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.4, )"
             },
