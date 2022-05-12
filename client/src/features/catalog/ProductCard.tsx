@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardMedia,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import { Product } from "../../app/models/product";
 
 interface Props {
