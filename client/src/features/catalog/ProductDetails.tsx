@@ -1,4 +1,3 @@
-import axios from "axios";
 import {
   Divider,
   Grid,
@@ -12,6 +11,7 @@ import {
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Product } from "../../app/models/product";
+import agent from "../../app/api/agent";
 
 export default function ProductDetails() {
   const { id } = useParams<{ id: string }>();
@@ -19,10 +19,9 @@ export default function ProductDetails() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/api/products/${id}`)
-      .then((response) => setProduct(response.data))
-      .catch((error) => console.log(error))
+    agent.Catalog.details(parseInt(id))
+      .then((response) => setProduct(response))
+      .catch((error) => console.log(error.response))
       .finally(() => setLoading(false));
   }, [id]);
 
