@@ -21,7 +21,7 @@ import { useStoreContext } from "../context/StoreContext";
 import { getCookie } from "../util/util";
 import agent from "../api/agent";
 import LoadingComponent from "./LoadingComponent";
-import CheckoutPage from "../checkout/CheckoutPage";
+import CheckoutPage from "../../features/checkout/CheckoutPage";
 
 function App() {
   const { setBasket } = useStoreContext();
