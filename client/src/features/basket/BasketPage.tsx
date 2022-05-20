@@ -10,7 +10,9 @@ import {
   TableRow,
   Typography,
   Box,
+  Button,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import agent from "../../app/api/agent";
 import { useStoreContext } from "../../app/context/StoreContext";
@@ -128,6 +130,15 @@ export default function BasketPage() {
         </Table>
       </TableContainer>
       <BasketSummary />
+      <Button
+        component={Link}
+        to="/checkout"
+        variant="contained"
+        size="large"
+        fullWidth
+      >
+        Checkout
+      </Button>
     </>
   );
 }
