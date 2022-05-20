@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import agent from "../../app/api/agent";
 // import { useStoreContext } from "../../app/context/StoreContext";
 import { Product } from "../../app/models/product";
-import { useAppDispatch } from "../../app/store/configureStore";
+import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
 import { setBasket } from "../basket/basketSlice";
 
 interface Props {
@@ -22,8 +22,7 @@ interface Props {
 }
 export default function ProductCard({ product }: Props) {
   const [loading, setLoading] = useState(false);
-  // const { setBasket } = useStoreContext();
-  const dispatch = useAppDispatch();
+  const { setBasket } = useStoreContext();
 
   function handleAddItem(productId: number) {
     setLoading(true);
@@ -32,7 +31,10 @@ export default function ProductCard({ product }: Props) {
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }
-
+  /*
+  const { status } = useAppSelector((state) => state.basket);
+  const dispatch = useAppDispatch();
+*/
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
@@ -62,7 +64,7 @@ export default function ProductCard({ product }: Props) {
       <CardActions>
         <LoadingButton
           loading={loading}
-          onClick={() => handleAddItem(product.id)}
+          onClick={() => dispatch(product.id)}
           size="small"
         >
           Add to cart
