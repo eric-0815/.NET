@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { number } from "yup";
 import agent from "../../app/api/agent";
 import { Basket } from "../../app/models/basket"
 
@@ -13,9 +12,9 @@ const initialState: BasketState = {
     status: 'idle',
 }
 
-export const addBasketItemAsync = createAsyncThunk<Basket, { productId: number, quantity: number }>(
+export const addBasketItemAsync = createAsyncThunk<Basket, { productId: number, quantity?: number }>(
     'basket/addBasketItemAsync',
-    async ({ productId, quantity }) => {
+    async ({ productId, quantity = 1 }) => {
         try {
             return await agent.Basket.addItem(productId, quantity);
         } catch (error) {
@@ -42,7 +41,7 @@ export const basketSlice = createSlice({
     extraReducers: (builder => {
         builder.addCase(addBasketItemAsync.pending, (state, action) => {
             console.log(action);
-            state.status = 'pendingAddItem';
+            state.status = 'pendingAddItem' + action.meta.arg.productId;
         });
         builder.addCase(addBasketItemAsync.fulfilled, (state, action) => {
             state.status = 'idle';
