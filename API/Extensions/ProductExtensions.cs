@@ -35,11 +35,15 @@ namespace API.Entities
             if (!string.IsNullOrEmpty(brands))
             {
                 brandList.AddRange(brands.ToLower().Split(",").ToList());
+                /*System.Console.WriteLine("brandList.ToString()");
+                brandList.ForEach(p => System.Console.WriteLine(p));*/
             }
 
             if (!string.IsNullOrEmpty(types))
             {
                 typeList.AddRange(types.ToLower().Split(",").ToList());
+                /*System.Console.WriteLine("typeList.ToString()");
+                typeList.ForEach(p => System.Console.WriteLine(p));*/
             }
 
             // if equal to 0, do nothing. Otherwise to lower;

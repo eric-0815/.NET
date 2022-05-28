@@ -12,7 +12,7 @@ import {
 import { Paper, Grid } from "@mui/material";
 import ProductSearch from "./ProductSearch";
 import RadioButtonGroup from "../../app/components/RadioButtonGroup";
-import CheckboxButtons from "../../app/components/CheckButtons";
+import CheckboxButtons from "../../app/components/CheckboxButtons";
 import AppPagination from "../../app/components/AppPagination";
 
 const sortOptions = [

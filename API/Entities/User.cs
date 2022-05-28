@@ -1,6 +1,6 @@
 namespace API.Entities
 {
-    public class Product
+    public class User : IdentityUser
     {
         public int Id { get; set; }
         public string Name { get; set; }
